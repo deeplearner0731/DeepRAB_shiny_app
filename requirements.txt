@@ -1,0 +1,18 @@
+# DeepRAB subgroup explorer -- Posit Connect requirements
+#
+# tf-keras is NOT optional.  TensorFlow >= 2.16 ships Keras 3, which removed
+# keras.backend.in_train_phase -- the call that switches ConcreteSelect between
+# its stochastic training branch and its deterministic argmax inference branch.
+# tf-keras restores the Keras 2 API, and app.py sets TF_USE_LEGACY_KERAS=1
+# before importing TensorFlow so tensorflow.keras resolves to it.
+#
+# Versions pinned to what this app was tested against.  Loosen deliberately.
+
+shiny==1.7.0
+tensorflow==2.21.0
+tf-keras==2.21.0
+numpy==2.5.2
+pandas==3.0.5
+scikit-learn==1.9.0
+scipy==1.18.1
+matplotlib==3.11.1
